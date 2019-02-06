@@ -31,6 +31,26 @@ if [ "${GROUPS}" = "2000" ]; then
     USER_SYMBOL=">"
 fi
 
+if [ "${GROUPS}" = "3000" ]; then
+    USER_COLOR="\[\e[1;35m\]"
+    USER_SYMBOL=">"
+fi
+
+if [ "${GROUPS}" = "5000" ]; then
+    USER_COLOR="\[\e[1;35m\]"
+    USER_SYMBOL=">"
+fi
+
+if [ "${GROUPS}" = "7000" ]; then
+    USER_COLOR="\[\e[1;36m\]"
+    USER_SYMBOL=">"
+fi
+
+if [ "${GROUPS}" = "9000" ]; then
+    USER_COLOR="\[\e[1;35m\]"
+    USER_SYMBOL=">"
+fi
+
 PS1="${USER_COLOR}\u${COLOR_RESET}@${COLOR_HOSTNAME}\H${COLOR_RESET} ${COLOR_PATH}[${COLOR_RESET} \w ${COLOR_PATH}]${COLOR_RESET}${USER_SYMBOL} "
 
 LS_OPTIONS="-b -T0 --color=auto"
