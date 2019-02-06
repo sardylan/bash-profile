@@ -8,7 +8,7 @@ COLOR_PATH="\[\e[1;36m\]"
 COLOR_DEFAULT="\[\e[1;32m\]"
 
 HISTCONTROL="ignoreboth"
-HISTIGNORE="&:[bf]g:exit"
+HISTIGNORE="&:[bf]g:exit:history:reboot"
 HISTSIZE="1048576"
 HISTFILESIZE="8388608"
 
