@@ -22,3 +22,5 @@ rm -f /etc/DIR_COLORS
 
 rm -f /root/.profile
 rm -f /root/.bashrc
+
+rm -f /etc/profile.d/90-git_branch.sh
