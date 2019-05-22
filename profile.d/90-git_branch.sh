@@ -1,7 +1,7 @@
 #!/bin/bash
 
 parse_git_branch() {
-    if [ -d .git ]; then
+    if [ -e .git ]; then
         echo -ne "\e[95m{"
         git branch 2> /dev/null | sed -e "/^ /d" -e "s/* //g" | tr -d "\n"
         echo -ne "}\e[39m "
