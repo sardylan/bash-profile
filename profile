@@ -2,10 +2,10 @@
 
 shopt -s checkwinsize
 
-COLOR_RESET="\[\e[0m\]"
-COLOR_HOSTNAME="\[\e[1;37m\]"
-COLOR_PATH="\[\e[1;36m\]"
-COLOR_DEFAULT="\[\e[1;32m\]"
+COLOR_RESET="\001\e[0m\002"
+COLOR_HOSTNAME="\001\e[1;37m\002"
+COLOR_PATH="\001\e[1;36m\002"
+COLOR_DEFAULT="\001\e[1;32m\002"
 
 HISTCONTROL="ignoreboth"
 HISTIGNORE="&:[bf]g:exit:history:reboot"
@@ -22,32 +22,32 @@ PS3="- "
 PS4="+ "
 
 if [ "${GROUPS}" = "0" ]; then
-    USER_COLOR="\[\e[1;31m\]"
+    USER_COLOR="\001\e[1;31m\002"
     USER_SYMBOL="#"
 fi
 
 if [ "${GROUPS}" = "2000" ]; then
-    USER_COLOR="\[\e[1;33m\]"
+    USER_COLOR="\001\e[1;33m\002"
     USER_SYMBOL=">"
 fi
 
 if [ "${GROUPS}" = "3000" ]; then
-    USER_COLOR="\[\e[1;35m\]"
+    USER_COLOR="\001\e[1;35m\002"
     USER_SYMBOL=">"
 fi
 
 if [ "${GROUPS}" = "5000" ]; then
-    USER_COLOR="\[\e[1;35m\]"
+    USER_COLOR="\001\e[1;35m\002"
     USER_SYMBOL=">"
 fi
 
 if [ "${GROUPS}" = "7000" ]; then
-    USER_COLOR="\[\e[1;36m\]"
+    USER_COLOR="\001\e[1;36m\002"
     USER_SYMBOL=">"
 fi
 
 if [ "${GROUPS}" = "9000" ]; then
-    USER_COLOR="\[\e[1;35m\]"
+    USER_COLOR="\001\e[1;35m\002"
     USER_SYMBOL=">"
 fi
 
