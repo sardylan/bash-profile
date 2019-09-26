@@ -51,10 +51,10 @@ if [ "${GROUPS}" = "9000" ]; then
     USER_SYMBOL=">"
 fi
 
-PS1="${USER_COLOR}\u${COLOR_RESET}@${COLOR_HOSTNAME}\H${COLOR_RESET} ${COLOR_PATH}[${COLOR_RESET} \w ${COLOR_PATH}]${COLOR_RESET}${USER_SYMBOL} "
-
 LS_OPTIONS="-b -T0 --color=auto"
 SVN_EDITOR="vim"
+
+PS1="${USER_COLOR}\u${COLOR_RESET}@${COLOR_HOSTNAME}\H${COLOR_RESET} ${COLOR_PATH}[${COLOR_RESET} \w ${COLOR_PATH}]${COLOR_RESET}${USER_SYMBOL} "
 
 alias ls="/bin/ls ${LS_OPTIONS}"
 alias dir="/bin/ls ${LS_OPTIONS} --format=vertical"
@@ -77,6 +77,9 @@ if [ -d /etc/profile.d ]; then
     done
     unset F
 fi
+
+RETURN_PS='\[\033[01;37m\]$? $(if [[ $? == 0 ]]; then echo "\[\033[01;32m\]\342\234\223"; else echo "\[\033[01;31m\]\342\234\227"; fi)'
+PS1="${RETURN_PS} ${PS1}"
 
 if [ -x /lbin/env-sanitize ]; then
     source /lbin/env-sanitize
