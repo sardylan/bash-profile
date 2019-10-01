@@ -78,7 +78,7 @@ if [ -d /etc/profile.d ]; then
     unset F
 fi
 
-RETURN_PS='\[\033[01;37m\]$? $(if [[ $? == 0 ]]; then echo "\[\033[01;32m\]\342\234\223"; else echo "\[\033[01;31m\]\342\234\227"; fi)'
+RETURN_PS='\001\e[01;37m\002$? $(if [[ $? == 0 ]]; then echo "\001\e[01;32m\002\342\234\223"; else echo "\001\e[01;31m\002\342\234\227"; fi)'
 PS1="${RETURN_PS} ${PS1}"
 
 if [ -x /lbin/env-sanitize ]; then
